@@ -1,3 +1,10 @@
+# Just fixed a UI-Thread issue in the origin package for non-null safety version (0.0.5)
+
+
+
+`original README below`
+
+
 # Facebook Sdk For Flutter
 
 ![GitHub code size](https://img.shields.io/github/languages/code-size/saadfarhan124/sadfarhan124-facebook_flutter_plugin)
