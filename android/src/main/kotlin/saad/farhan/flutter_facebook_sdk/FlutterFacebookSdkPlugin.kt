@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import androidx.annotation.NonNull
 import bolts.AppLinks
 import com.facebook.FacebookSdk
@@ -193,12 +194,13 @@ class FlutterFacebookSdkPlugin : FlutterPlugin, MethodCallHandler, StreamHandler
         val targetUri = AppLinks.getTargetUrlFromInboundIntent(context, activityPluginBinding!!.activity.intent)
         AppLinkData.fetchDeferredAppLinkData(context, object : AppLinkData.CompletionHandler {
             override fun onDeferredAppLinkDataFetched(appLinkData: AppLinkData?) {
-
                 if (appLinkData == null) {
+                    Log.d("FlutterFbSdkPlugin", "appLinkData is null");
                     return;
                 }
 
                 deepLinkUrl = appLinkData.targetUri.toString();
+                Log.d("FlutterFbSdkPlugin","appLinkData deep link is $deepLinkUrl");
                 if (eventSink != null && deepLinkUrl != null) {
                     Handler(Looper.getMainLooper()).post {
                         eventSink!!.success(deepLinkUrl)
