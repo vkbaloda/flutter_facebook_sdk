@@ -43,7 +43,7 @@ class FlutterFacebookSdkPlugin : FlutterPlugin, MethodCallHandler, StreamHandler
     private lateinit var logger: AppEventsLogger
 
 
-    private var deepLinkUrl: String = "Saad Farhan"
+    private var deepLinkUrl: String = "NA"
     private var PLATFORM_CHANNEL: String = "flutter_facebook_sdk/methodChannel"
     private var EVENTS_CHANNEL: String = "flutter_facebook_sdk/eventChannel"
     private var queuedLinks: List<String> = emptyList()
@@ -195,8 +195,11 @@ class FlutterFacebookSdkPlugin : FlutterPlugin, MethodCallHandler, StreamHandler
         AppLinkData.fetchDeferredAppLinkData(context, object : AppLinkData.CompletionHandler {
             override fun onDeferredAppLinkDataFetched(appLinkData: AppLinkData?) {
                 if (appLinkData == null) {
-                    Handler(Looper.getMainLooper()).post{
-                        eventSink!!.success("noLink")
+                    Log.d("FlutterFbSdkPlugin", "appLinkData is null")
+                    if(eventSink != null){
+                        Handler(Looper.getMainLooper()).post {
+                            eventSink!!.success("noLink")
+                        }
                     }
                     return
                 }
