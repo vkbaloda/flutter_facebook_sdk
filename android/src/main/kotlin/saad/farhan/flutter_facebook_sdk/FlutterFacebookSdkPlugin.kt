@@ -195,6 +195,7 @@ class FlutterFacebookSdkPlugin : FlutterPlugin, MethodCallHandler, StreamHandler
         AppLinkData.fetchDeferredAppLinkData(context, object : AppLinkData.CompletionHandler {
             override fun onDeferredAppLinkDataFetched(appLinkData: AppLinkData?) {
                 if (appLinkData == null) {
+                    deepLinkUrl = "noLink";
                     Log.d("FlutterFbSdkPlugin", "appLinkData is null")
                     if(eventSink != null){
                         Handler(Looper.getMainLooper()).post {
