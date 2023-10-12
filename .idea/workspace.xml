@@ -106,7 +106,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642658348987</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added noLink to variable">
+      <created>1644590633053</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1644590633053</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -137,6 +144,7 @@
     <MESSAGE value="ui-thread issue fix3" />
     <MESSAGE value="'cannot resolve version' issue fix" />
     <MESSAGE value="added logs for deferred link fetching" />
-    <option name="LAST_COMMIT_MESSAGE" value="added logs for deferred link fetching" />
+    <MESSAGE value="added noLink to variable" />
+    <option name="LAST_COMMIT_MESSAGE" value="added noLink to variable" />
   </component>
 </project>

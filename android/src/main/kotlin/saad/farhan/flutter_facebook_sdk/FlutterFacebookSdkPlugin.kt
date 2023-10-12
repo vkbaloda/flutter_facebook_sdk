@@ -1,4 +1,4 @@
-package saad.farhan.flutter_facebook_sdk
+package saad.farhan.flutter_facebook
 
 import android.content.Context
 import android.content.Intent
